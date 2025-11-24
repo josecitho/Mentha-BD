@@ -21,8 +21,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://mentha-api-production-c72e.up.railway.app',
-    'https://TU-URL.vercel.app'  // ← Reemplaza con tu URL de Vercel
+    'https://mentha-bd.vercel.app'  // ← Agrega tu URL de Vercel
   ],
   credentials: true
 }));
