@@ -104,7 +104,7 @@ const BookingPage: React.FC = () => {
 
     try {
       // Hacer petición a la API de Prisma
-      const response = await fetch(`${API_URL}/api/citas`, {
+      const response = await fetch(`${API_URL}/citas`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
