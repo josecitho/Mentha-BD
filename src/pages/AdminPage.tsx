@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Mail, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -33,7 +34,7 @@ const AdminPage: React.FC = () => {
 
   const loadCitas = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/citas');
+      const res = await fetch(`${API_URL}/citas');
       const json = await res.json();
       if (!res.ok || !json.success) throw new Error(json.message || 'Error loading appointments');
       setCitas(json.data || []);
@@ -46,7 +47,7 @@ const AdminPage: React.FC = () => {
 
   const updateEstado = async (citaId: string, nuevoEstado: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/citas/${citaId}`, {
+      const res = await fetch(`${API_URL}/citas/${citaId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ estado: nuevoEstado })
@@ -63,7 +64,7 @@ const AdminPage: React.FC = () => {
     if (!confirm(t('admin.deleteConfirm'))) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/citas/${citaId}`, { method: 'DELETE' });
+      const res = await fetch(`${API_URL}/citas/${citaId}`, { method: 'DELETE' });
       const json = await res.json();
       if (!res.ok || !json.success) throw new Error(json.message || 'Error deleting appointment');
       await loadCitas();

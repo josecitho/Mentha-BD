@@ -17,14 +17,14 @@
 #### `src/pages/AdminPage.tsx` ✅
 - Eliminada importación `import { supabase }`
 - Reemplazadas todas las consultas Supabase con llamadas fetch a API local:
-  - `loadCitas()`: Ahora llama a `GET http://localhost:3000/api/citas`
-  - `updateEstado()`: Ahora llama a `PUT http://localhost:3000/api/citas/:id`
-  - `deleteCita()`: Ahora llama a `DELETE http://localhost:3000/api/citas/:id`
+  - `loadCitas()`: Ahora llama a `GET ${API_URL}/citas`
+  - `updateEstado()`: Ahora llama a `PUT ${API_URL}/citas/:id`
+  - `deleteCita()`: Ahora llama a `DELETE ${API_URL}/citas/:id`
 
 #### `src/pages/AdminPanel.tsx` ✅
 - Eliminada importación `import { supabase }`
 - Reemplazadas todas las operaciones CRUD:
-  - `fetchServices()`: Ahora llama a `GET http://localhost:3000/api/servicios` con mapeo de campos
+  - `fetchServices()`: Ahora llama a `GET ${API_URL}/servicios` con mapeo de campos
   - `fetchStaffUsers()`: Devuelve array vacío (sin API disponible)
   - `handleServiceSubmit()`: Muestra alerta "Para gestionar servicios, usa: npx prisma studio"
   - `handleStaffSubmit()`: Muestra alerta "Para gestionar personal, usa: npx prisma studio"
@@ -34,9 +34,9 @@
 #### `src/pages/StaffPanel.tsx` ✅
 - Eliminada importación `import { supabase }`
 - Reemplazadas todas las consultas Supabase con fetch calls:
-  - `fetchAppointments()`: Llama a `GET http://localhost:3000/api/citas` con mapeo de campos
-  - `updateAppointmentStatus()`: Llama a `PUT http://localhost:3000/api/citas/:id`
-  - `saveInternalNotes()`: Llama a `PUT http://localhost:3000/api/citas/:id`
+  - `fetchAppointments()`: Llama a `GET ${API_URL}/citas` con mapeo de campos
+  - `updateAppointmentStatus()`: Llama a `PUT ${API_URL}/citas/:id`
+  - `saveInternalNotes()`: Llama a `PUT ${API_URL}/citas/:id`
 
 #### `src/pages/BookingPageWithPrismaExample.tsx` ✅
 - Eliminada importación `import { supabase }`
@@ -73,12 +73,12 @@ Tipo:     localStorage (solo desarrollo)
 
 ### Endpoints API Disponibles
 ```
-GET    http://localhost:3000/api/citas
-POST   http://localhost:3000/api/citas
-PUT    http://localhost:3000/api/citas/:id
-DELETE http://localhost:3000/api/citas/:id
-GET    http://localhost:3000/api/servicios
-GET    http://localhost:3000/api/health
+GET    ${API_URL}/citas
+POST   ${API_URL}/citas
+PUT    ${API_URL}/citas/:id
+DELETE ${API_URL}/citas/:id
+GET    ${API_URL}/servicios
+GET    ${API_URL}/health
 ```
 
 ### Base de Datos

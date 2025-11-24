@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Plus, Edit, Trash2, Users, Briefcase, X } from 'lucide-react';
@@ -67,7 +68,7 @@ const AdminPanel: React.FC = () => {
 
   const fetchServices = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/servicios');
+      const res = await fetch(`${API_URL}/servicios');
       const json = await res.json();
       if (!res.ok || !json.success) throw new Error(json.message || 'Error fetching services');
       const mapped = (json.data || []).map((s: any) => ({

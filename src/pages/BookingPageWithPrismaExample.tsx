@@ -1,6 +1,6 @@
 // Ejemplo de cómo integrar Prisma en BookingPage.tsx
 // Descomenta las líneas para usar Prisma en lugar de Supabase
-
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Check, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -47,7 +47,7 @@ const BookingPageWithPrisma: React.FC = () => {
     try {
       // OPCIÓN 1: Usar Prisma (descomenta)
       /*
-      const response = await fetch('http://localhost:3000/api/servicios');
+      const response = await fetch(`${API_URL}/servicios');
       const result = await response.json();
       
       const mappedData = (result.data || []).map(s => ({

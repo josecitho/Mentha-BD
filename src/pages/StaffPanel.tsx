@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, User, Phone, Mail, Filter, Search, CheckCircle, XCircle, Clock as ClockIcon } from 'lucide-react';
@@ -52,7 +53,7 @@ const StaffPanel: React.FC = () => {
   const fetchAppointments = async () => {
     try {
       setLoadingData(true);
-      const res = await fetch('http://localhost:3000/api/citas');
+      const res = await fetch(`${API_URL}/citas');
       const json = await res.json();
       if (!res.ok || !json.success) throw new Error(json.message);
       // Renombrar campos de la respuesta a los que espera el componente
@@ -101,7 +102,7 @@ const StaffPanel: React.FC = () => {
 
   const updateAppointmentStatus = async (id: string, status: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/citas/${id}`, {
+      const res = await fetch(`${API_URL}/citas/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ estado: status })
@@ -118,7 +119,7 @@ const StaffPanel: React.FC = () => {
     if (!selectedAppointment) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/citas/${selectedAppointment.id}`, {
+      const res = await fetch(`${API_URL}/citas/${selectedAppointment.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ notas_internas: internalNotes })

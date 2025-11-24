@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Check, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -11,7 +12,7 @@ interface Service {
   active: boolean;
 }
 
-const API_URL = 'http://localhost:3000';
+//const API_URL = 'http://localhost:3000';//
 
 const BookingPage: React.FC = () => {
   const { t } = useLanguage();

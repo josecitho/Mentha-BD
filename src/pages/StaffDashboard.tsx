@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogOut, Eye } from 'lucide-react';
@@ -38,7 +39,7 @@ const StaffDashboard: React.FC = () => {
   const fetchCitas = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/api/citas', {
+      const res = await fetch(`${API_URL}/citas', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

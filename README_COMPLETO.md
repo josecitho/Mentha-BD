@@ -362,7 +362,7 @@ npm run server
 ### API no responde
 1. Verifica que `npm run server` está ejecutándose
 2. Verifica que el puerto 3000 no está bloqueado
-3. Abre `http://localhost:3000/api/health` en navegador
+3. Abre `${API_URL}/health` en navegador
 
 ## 📞 Contacto y Soporte
 

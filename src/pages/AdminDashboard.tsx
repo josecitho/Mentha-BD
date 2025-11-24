@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogOut, Users, Calendar, Settings, Edit2, Trash2, Plus, Search } from 'lucide-react';
@@ -54,7 +55,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchUsuarios = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/usuarios', {
+      const res = await fetch(`${API_URL}/usuarios', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -66,7 +67,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchCitas = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/citas', {
+      const res = await fetch(`${API_URL}/citas', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -78,7 +79,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchServicios = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/servicios', {
+      const res = await fetch(`${API_URL}/servicios', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -119,8 +120,8 @@ const AdminDashboard: React.FC = () => {
     try {
       const method = editingItem ? 'PUT' : 'POST';
       const url = editingItem 
-        ? `http://localhost:3000/api/usuarios/${editingItem.id}`
-        : 'http://localhost:3000/api/usuarios';
+        ? `${API_URL}/usuarios/${editingItem.id}`
+        : `${API_URL}/usuarios';
 
       const res = await fetch(url, {
         method,
@@ -148,7 +149,7 @@ const AdminDashboard: React.FC = () => {
     if (!window.confirm('¿Eliminar este usuario?')) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/usuarios/${id}`, {
+      const res = await fetch(`${API_URL}/usuarios/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -165,7 +166,7 @@ const AdminDashboard: React.FC = () => {
 
   const handleUpdateCitaEstado = async (id: number, nuevoEstado: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/citas/${id}`, {
+      const res = await fetch(`${API_URL}/citas/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -187,7 +188,7 @@ const AdminDashboard: React.FC = () => {
     if (!window.confirm('¿Eliminar esta cita?')) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/citas/${id}`, {
+      const res = await fetch(`${API_URL}/citas/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
