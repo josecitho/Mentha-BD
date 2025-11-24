@@ -18,8 +18,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://mentha-api-production-c72e.up.railway.app',
+    // Agregaremos la URL de Vercel después
+  ],
+  credentials: true
+}));
 
 // Interfaces
 interface AuthRequest extends Request {
