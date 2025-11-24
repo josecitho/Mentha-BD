@@ -39,7 +39,7 @@ const StaffDashboard: React.FC = () => {
   const fetchCitas = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_URL}/citas', {
+    const res = await fetch(`${API_URL}/citas`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

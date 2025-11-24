@@ -55,7 +55,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchUsuarios = async () => {
     try {
-      const res = await fetch(`${API_URL}/usuarios', {
+      const res = await fetch(`${API_URL}/usuarios`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -67,7 +67,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchCitas = async () => {
     try {
-      const res = await fetch(`${API_URL}/citas', {
+      const res = await fetch(`${API_URL}/citas`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -79,7 +79,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchServicios = async () => {
     try {
-      const res = await fetch(`${API_URL}/servicios', {
+      const res = await fetch(`${API_URL}/servicios`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -121,7 +121,7 @@ const AdminDashboard: React.FC = () => {
       const method = editingItem ? 'PUT' : 'POST';
       const url = editingItem 
         ? `${API_URL}/usuarios/${editingItem.id}`
-        : `${API_URL}/usuarios';
+        : `${API_URL}/usuarios`;
 
       const res = await fetch(url, {
         method,
