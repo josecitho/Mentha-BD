@@ -25,6 +25,7 @@ app.use(cors({
   ],
   credentials: true
 }));
+app.use(express.json()); 
 
 // Interfaces
 interface AuthRequest extends Request {
