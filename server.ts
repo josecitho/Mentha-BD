@@ -22,7 +22,7 @@ app.use(cors({
   origin: [
     'http://localhost:5173',
     'https://mentha-api-production-c72e.up.railway.app',
-    // Agregaremos la URL de Vercel después
+    'https://TU-URL.vercel.app'  // ← Reemplaza con tu URL de Vercel
   ],
   credentials: true
 }));
