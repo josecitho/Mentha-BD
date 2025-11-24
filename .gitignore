@@ -11,3 +11,9 @@ coverage/
 prisma/dev.db
 prisma/*.db
 prisma/*.db-journal
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.production.local
