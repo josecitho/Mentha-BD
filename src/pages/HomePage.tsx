@@ -10,23 +10,23 @@ const HomePage: React.FC = () => {
     {
       name: t('services.facial'),
       description: t('service.facial.desc'),
-      price: '$75',
+      price: '$45.000',
       duration: '60 min',
       image: 'https://images.pexels.com/photos/3985347/pexels-photo-3985347.jpeg'
     },
     {
-      name: t('services.balayage'),
-      description: t('service.balayage.desc'),
-      price: '$180',
+      name: t('services.lashesRussian'),
+      description: t('service.lashesRussian.desc'),
+      price: '$120.000',
       duration: '3 hrs',
-      image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg'
+      image: 'https://images.pexels.com/photos/3992859/pexels-photo-3992859.jpeg'
     },
     {
-      name: t('services.lashes'),
-      description: t('service.lashes.desc'),
-      price: '$120',
+      name: t('services.nailsAcrylic'),
+      description: t('service.nailsAcrylic.desc'),
+      price: '$30.000',
       duration: '2 hrs',
-      image: 'https://images.pexels.com/photos/3985327/pexels-photo-3985327.jpeg'
+      image: 'https://images.pexels.com/photos/3992865/pexels-photo-3992865.jpeg'
     }
   ];
 
