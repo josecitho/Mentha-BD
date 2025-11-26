@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
         ></div>
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
+         <h1 className="titulo-principal text-4xl sm:text-5xl lg:text-7xl text-white mb-6 animate-fade-in">
             {t('home.hero.title')}
           </h1>
           <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl mx-auto animate-slide-up">
