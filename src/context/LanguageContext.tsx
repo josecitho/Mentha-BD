@@ -381,7 +381,7 @@ const translations = {
     'nav.logout': 'Cerrar Sesión',
 
     // Home Page
-    'home.hero.title': 'Descubre Tu Belleza en MENTHA SALÓN',
+    'home.hero.title': 'Descubre un espacio donde la belleza se transforma en bienestar.',
     'home.hero.subtitle': 'Servicios de belleza premium con cuidado personalizado en un ambiente lujoso',
     'home.hero.cta': 'Reserva Tu Cita',
     'home.featured.title': 'Servicios Destacados',
