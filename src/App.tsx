@@ -46,7 +46,7 @@ function AppContent() {
   return (
     <Router>
       <div className="min-h-screen bg-cream-50 flex flex-col">
-        {!isAuthenticated && <Navbar />}
+       <Navbar />
         <main className="flex-1">
           <Routes>
             {/* Rutas Públicas */}
@@ -81,7 +81,7 @@ function AppContent() {
             />
           </Routes>
         </main>
-        {!isAuthenticated && <Footer />}
+       <Footer />
       </div>
     </Router>
   );
