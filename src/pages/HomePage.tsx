@@ -53,9 +53,9 @@ const HomePage: React.FC = () => {
 
   const stats = [
     { icon: Users, label: t('home.stats.clients'), value: '2,500+' },
-    { icon: Award, label: t('home.stats.experience'), value: '10+' },
+    { icon: Award, label: t('home.stats.experience'), value: '6+' },
     { icon: Clock, label: t('home.stats.services'), value: '15,000+' },
-    { icon: Star, label: t('home.stats.rating'), value: '4.9' }
+    { icon: Star, label: t('home.stats.rating'), value: '6.9' }
   ];
 
   return (
